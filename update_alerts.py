@@ -3,12 +3,7 @@ import json
 import os
 import re
 
-# 🔹 **API & Google Sheets Configuration**
-API_BASE_URL = "https://api.cryptocurrencyalerting.com/v1/alert-conditions"
-ALERT_API = os.getenv("ALERT_API")  # GitHub Secret for API Token
-HEADERS = {"Content-Type": "application/json"}
-
-# 🔹 **Google Sheets API configuration**
+# 🔹 **Google Sheets API Configuration**
 SHEET_ID = "1MSaFExv2AEzf3h1PB9fLEBtpla-E9uP-kDkjqpK2V-g"
 GOOGLE_SHEET_API = os.getenv("GOOGLE_SHEET_API")  # GitHub Secret for Google API Key
 
@@ -60,7 +55,8 @@ def fetch_discord_alerts():
     try:
         response = requests.get(DISCORD_WEBHOOK_URL)
         if response.status_code == 200:
-            return response.json()
+            messages = response.json()
+            return [msg["content"] for msg in messages]  # Extract message content only
         else:
             print(f"❌ Failed to fetch messages from Discord: {response.status_code}")
             return []
