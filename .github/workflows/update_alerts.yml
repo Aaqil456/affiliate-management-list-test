@@ -1,8 +1,8 @@
 name: Update Coin Listing Alerts
 
 on:
-  schedule:
-    - cron: "*/5 * * * *"  # Runs every 5 minutes
+  #schedule:
+    #- cron: "*/5 * * * *"  # Runs every 5 minutes
   workflow_dispatch:  # Allows manual execution from GitHub Actions
 
 permissions:
