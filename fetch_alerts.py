@@ -54,19 +54,29 @@ def fetch_discord_alerts():
     """ Fetch latest alerts from Discord Webhook. """
     try:
         response = requests.get(DISCORD_WEBHOOK_URL)
+        
         if response.status_code == 200:
             messages = response.json()
-            if isinstance(messages, list):  # Ensure it's a list of messages
-                return [msg["content"] for msg in messages]  # Extract message content
+
+            # ✅ Handle different response structures
+            if isinstance(messages, list):  
+                return [msg.get("content", "") for msg in messages if "content" in msg]  # Extract message content
+
+            elif isinstance(messages, dict) and "content" in messages:
+                return [messages["content"]]  # Convert single message into a list
+
             else:
-                print("⚠️ Discord response is not a list.")
+                print(f"⚠️ Unexpected Discord response format: {messages}")
                 return []
+
         else:
             print(f"❌ Failed to fetch messages from Discord: {response.status_code}")
             return []
+
     except requests.exceptions.RequestException as e:
         print(f"⚠️ Error fetching Discord messages: {e}")
         return []
+
 
 def extract_coin_listing_data(messages):
     """ Parses alert messages to extract coin listing details. """
