@@ -1,13 +1,13 @@
-name: Update Coin Listings
+name: Fetch Discord Alerts & Update JSON
 
 on:
-  repository_dispatch:
-  workflow_dispatch:
+  schedule:
+    - cron: "*/5 * * * *"  # Runs every 5 minutes
+  workflow_dispatch:  # Allow manual runs
 
 jobs:
   update_alerts:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
@@ -20,16 +20,13 @@ jobs:
       - name: Install Dependencies
         run: pip install requests
 
-      - name: Run Update Script
-        env:
-          ALERT_API: ${{ secrets.ALERT_API }}
-          GOOGLE_SHEET_API: ${{ secrets.GOOGLE_SHEET_API }}
-        run: python update_alerts.py
+      - name: Fetch Discord Alerts
+        run: python fetch_alerts.py
 
-      - name: Commit & Push Changes
+      - name: Commit and Push Updates
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
           git add coin_listing_alerts.json
-          git commit -m "🔄 Auto-update: New Coin Listings"
+          git commit -m "Updated coin listing alerts"
           git push
