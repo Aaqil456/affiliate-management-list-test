@@ -56,7 +56,13 @@ def fetch_discord_alerts():
         response = requests.get(DISCORD_WEBHOOK_URL)
         if response.status_code == 200:
             messages = response.json()
-            return [msg["content"] for msg in messages]  # Extract message content only
+
+            # Ensure messages is a list
+            if isinstance(messages, list):
+                return [msg["content"] for msg in messages if "content" in msg]  
+            else:
+                print("⚠️ Unexpected response format from Discord.")
+                return []
         else:
             print(f"❌ Failed to fetch messages from Discord: {response.status_code}")
             return []
@@ -69,11 +75,12 @@ def extract_coin_listing_data(messages):
     extracted_data = []
 
     for msg in messages:
-        match = re.search(r"(.+?) \((.+?)\) .* listed on (.+?) \(", msg)
+        match = re.search(r"(.+?) \((\w+)\) has been listed on (.+?) - View Alert", msg)
         if match:
-            coin_name = match.group(1)
-            ticker = match.group(2)
-            exchange = match.group(3)
+            coin_name = match.group(1).strip()
+            ticker = match.group(2).strip()
+            exchange = match.group(3).strip()
+
             extracted_data.append({
                 "coin": coin_name,
                 "ticker": ticker,
