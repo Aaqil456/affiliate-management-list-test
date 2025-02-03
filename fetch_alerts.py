@@ -19,6 +19,7 @@ ALERTS_JSON_FILE = "coin_listing_alerts.json"
 # ✅ Initialize Discord Client
 intents = discord.Intents.default()
 intents.messages = True
+intents.message_content = True  # ✅ Required for fetching message content
 client = discord.Client(intents=intents)
 
 async def fetch_messages():
@@ -33,6 +34,7 @@ async def fetch_messages():
 
     messages = []
     async for message in channel.history(limit=10):  # Fetch last 10 messages
+        print(f"📥 Received message: {message.content}")  # ✅ Debugging: Print messages
         messages.append(message.content)
 
     # ✅ Extract Coin Listings
@@ -139,4 +141,5 @@ async def on_ready():
     print(f"🚀 Bot logged in as {client.user}")
     await fetch_messages()
 
+# ✅ Run the bot
 client.run(TOKEN)
