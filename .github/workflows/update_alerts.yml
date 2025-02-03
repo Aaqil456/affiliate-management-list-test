@@ -13,29 +13,24 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-      - name: 🛎 Checkout Repository
+      - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: ⚙️ Set Up Python
+      - name: Set Up Python
         uses: actions/setup-python@v3
         with:
           python-version: "3.9"
 
-      - name: 📦 Install Dependencies
-        run: pip install discord.py requests
+      - name: Install Dependencies
+        run: pip install requests
 
-      - name: 🔑 Verify GitHub Secrets
+      - name: Verify GitHub Secrets
         env:
-          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
-          DISCORD_CHANNEL_ID: ${{ secrets.DISCORD_CHANNEL_ID }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           GOOGLE_SHEET_API: ${{ secrets.GOOGLE_SHEET_API }}
         run: |
-          if [ -z "${DISCORD_BOT_TOKEN}" ]; then
-            echo "❌ DISCORD_BOT_TOKEN is missing!"
-            exit 1
-          fi
-          if [ -z "${DISCORD_CHANNEL_ID}" ]; then
-            echo "❌ DISCORD_CHANNEL_ID is missing!"
+          if [ -z "${SLACK_WEBHOOK_URL}" ]; then
+            echo "❌ SLACK_WEBHOOK_URL is missing!"
             exit 1
           fi
           if [ -z "${GOOGLE_SHEET_API}" ]; then
@@ -43,14 +38,13 @@ jobs:
             exit 1
           fi
 
-      - name: 🏗 Run Alert Fetching Script
+      - name: Run Python Script
         env:
-          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
-          DISCORD_CHANNEL_ID: ${{ secrets.DISCORD_CHANNEL_ID }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           GOOGLE_SHEET_API: ${{ secrets.GOOGLE_SHEET_API }}
         run: python fetch_alerts.py
 
-      - name: 📤 Commit & Push Changes
+      - name: Commit & Push Changes
         env:
           ACTIONS_PAT: ${{ secrets.ACTIONS_PAT }}
         run: |
