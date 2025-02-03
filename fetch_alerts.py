@@ -1,17 +1,56 @@
-import requests
-import json
+import discord
+import asyncio
 import os
 import re
+import json
+
+# 🔹 **Bot Configuration**
+TOKEN = os.getenv("DISCORD_BOT_TOKEN")  # Get bot token from GitHub Secrets
+CHANNEL_ID = int(os.getenv("DISCORD_CHANNEL_ID"))  # Get Discord Channel ID from GitHub Secrets
 
 # 🔹 **Google Sheets API Configuration**
 SHEET_ID = "1MSaFExv2AEzf3h1PB9fLEBtpla-E9uP-kDkjqpK2V-g"
 GOOGLE_SHEET_API = os.getenv("GOOGLE_SHEET_API")  # GitHub Secret for Google API Key
 
-# 🔹 **Discord Webhook Configuration**
-DISCORD_WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK_URL")  # GitHub Secret for Discord Webhook
-
 # 🔹 **JSON File to Store Alerts**
 ALERTS_JSON_FILE = "coin_listing_alerts.json"
+
+# ✅ Initialize Discord Client
+intents = discord.Intents.default()
+intents.messages = True
+client = discord.Client(intents=intents)
+
+async def fetch_messages():
+    """ Fetch latest messages from Discord channel """
+    await client.wait_until_ready()
+    channel = client.get_channel(CHANNEL_ID)
+
+    if channel is None:
+        print("❌ Channel not found. Check the CHANNEL_ID.")
+        await client.close()
+        return
+
+    messages = []
+    async for message in channel.history(limit=10):  # Fetch last 10 messages
+        messages.append(message.content)
+
+    # ✅ Extract Coin Listings
+    extracted_alerts = extract_coin_listing_data(messages)
+    
+    # ✅ Fetch exchanges from Google Sheets
+    exchange_dict = fetch_exchanges_from_google_sheet()
+
+    # ✅ Filter & Format Alerts
+    if extracted_alerts and exchange_dict:
+        matched_alerts = filter_and_format_alerts(extracted_alerts, exchange_dict)
+
+        if matched_alerts:
+            save_alerts_to_json(matched_alerts)
+        else:
+            print("⚠️ No alerts matched the exchanges from Google Sheet.")
+
+    print("✅ Messages processed. Shutting down bot.")
+    await client.close()  # Stop the bot after fetching messages
 
 def fetch_exchanges_from_google_sheet():
     """ Fetch exchange names and affiliate links from a Google Sheet. """
@@ -50,34 +89,6 @@ def fetch_exchanges_from_google_sheet():
         print(f"⚠️ Error fetching exchange data from Google Sheet: {e}")
         return {}
 
-def fetch_discord_alerts():
-    """ Fetch latest alerts from Discord Webhook. """
-    try:
-        response = requests.get(DISCORD_WEBHOOK_URL)
-        
-        if response.status_code == 200:
-            messages = response.json()
-
-            # ✅ Handle different response structures
-            if isinstance(messages, list):  
-                return [msg.get("content", "") for msg in messages if "content" in msg]  # Extract message content
-
-            elif isinstance(messages, dict) and "content" in messages:
-                return [messages["content"]]  # Convert single message into a list
-
-            else:
-                print(f"⚠️ Unexpected Discord response format: {messages}")
-                return []
-
-        else:
-            print(f"❌ Failed to fetch messages from Discord: {response.status_code}")
-            return []
-
-    except requests.exceptions.RequestException as e:
-        print(f"⚠️ Error fetching Discord messages: {e}")
-        return []
-
-
 def extract_coin_listing_data(messages):
     """ Parses alert messages to extract coin listing details. """
     extracted_data = []
@@ -85,13 +96,10 @@ def extract_coin_listing_data(messages):
     for msg in messages:
         match = re.search(r"(.+?) \((.+?)\) .* listed on (.+?) -", msg)
         if match:
-            coin_name = match.group(1)
-            ticker = match.group(2)
-            exchange = match.group(3)
             extracted_data.append({
-                "coin": coin_name,
-                "ticker": ticker,
-                "exchange": exchange,
+                "coin": match.group(1),
+                "ticker": match.group(2),
+                "exchange": match.group(3),
                 "alert_message": msg
             })
 
@@ -125,29 +133,9 @@ def save_alerts_to_json(alerts):
     except Exception as e:
         print(f"⚠️ Error saving alerts: {e}")
 
-if __name__ == "__main__":
-    print("📡 Fetching exchange data from Google Sheet...")
-    exchange_dict = fetch_exchanges_from_google_sheet()
+@client.event
+async def on_ready():
+    print(f"🚀 Bot logged in as {client.user}")
+    await fetch_messages()
 
-    if exchange_dict:
-        print(f"✅ Found {len(exchange_dict)} exchanges from Google Sheet.")
-
-        print("📡 Fetching latest Discord alerts...")
-        messages = fetch_discord_alerts()
-
-        if messages:
-            extracted_alerts = extract_coin_listing_data(messages)
-
-            if extracted_alerts:
-                matched_alerts = filter_and_format_alerts(extracted_alerts, exchange_dict)
-
-                if matched_alerts:
-                    save_alerts_to_json(matched_alerts)
-                else:
-                    print("⚠️ No alerts matched the exchanges from Google Sheet.")
-            else:
-                print("⚠️ No coin listing data extracted.")
-        else:
-            print("⚠️ No new messages from Discord.")
-    else:
-        print("⚠️ No exchanges found in Google Sheet.")
+client.run(TOKEN)
