@@ -3,6 +3,7 @@ import asyncio
 import os
 import re
 import json
+import requests  # ✅ Ensure requests module is imported
 
 # 🔹 **Bot Configuration**
 TOKEN = os.getenv("DISCORD_BOT_TOKEN")  # Get bot token from GitHub Secrets
@@ -56,7 +57,7 @@ def fetch_exchanges_from_google_sheet():
     """ Fetch exchange names and affiliate links from a Google Sheet. """
     try:
         url = f"https://sheets.googleapis.com/v4/spreadsheets/{SHEET_ID}/values/A1:Z1000?key={GOOGLE_SHEET_API}"
-        response = requests.get(url)
+        response = requests.get(url)  # ✅ Ensure requests is used correctly
 
         if response.status_code == 200:
             data = response.json()
