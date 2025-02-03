@@ -37,9 +37,14 @@ async def fetch_messages():
         print(f"📩 Received Message: {message.content}")  # ✅ Print received messages
         messages.append(message.content)
 
+    if not messages:
+        print("⚠️ No messages retrieved from Discord.")
+        await client.close()
+        return
+
     # ✅ Extract Coin Listings
     extracted_alerts = extract_coin_listing_data(messages)
-    
+
     # ✅ Fetch exchanges from Google Sheets
     exchange_dict = fetch_exchanges_from_google_sheet()
 
