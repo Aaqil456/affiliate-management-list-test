@@ -16,10 +16,11 @@ GOOGLE_SHEET_API = os.getenv("GOOGLE_SHEET_API")  # GitHub Secret for Google API
 # 🔹 **JSON File to Store Alerts**
 ALERTS_JSON_FILE = "coin_listing_alerts.json"
 
-# ✅ Enable required intents (Fixes Privileged Intents Error)
+# ✅ Initialize Discord Client with INTENTS to READ MESSAGES
 intents = discord.Intents.default()
 intents.messages = True
-intents.message_content = True  # ✅ REQUIRED: Enables reading message content
+intents.guilds = True
+intents.message_content = True  # ✅ REQUIRED to read messages
 client = discord.Client(intents=intents)
 
 async def fetch_messages():
@@ -28,23 +29,23 @@ async def fetch_messages():
     channel = client.get_channel(CHANNEL_ID)
 
     if channel is None:
-        print("❌ Channel not found. Check the DISCORD_CHANNEL_ID.")
+        print("❌ ERROR: Bot CANNOT find the channel. Check DISCORD_CHANNEL_ID!")
         await client.close()
         return
 
+    print(f"✅ Bot found channel: {channel.name} ({CHANNEL_ID})")
+    
     messages = []
     async for message in channel.history(limit=10):  # Fetch last 10 messages
-        print(f"📩 Received Message: {message.content}")  # ✅ Print received messages
+        print(f"🔹 [DEBUG] Found Message: {message.content} (by {message.author})")  # Debugging
         messages.append(message.content)
 
     if not messages:
-        print("⚠️ No messages retrieved from Discord.")
-        await client.close()
-        return
+        print("⚠️ ERROR: Bot **can access the channel but NO messages retrieved!** Check bot permissions.")
 
     # ✅ Extract Coin Listings
     extracted_alerts = extract_coin_listing_data(messages)
-
+    
     # ✅ Fetch exchanges from Google Sheets
     exchange_dict = fetch_exchanges_from_google_sheet()
 
@@ -76,7 +77,7 @@ def fetch_exchanges_from_google_sheet():
 
             header = rows[0]
             if "Name" not in header or "Link" not in header:
-                print("⚠️ Required columns 'Name' and 'Link' not found in the sheet.")
+                print("⚠️ ERROR: Google Sheet **missing required columns** 'Name' & 'Link'.")
                 return {}
 
             name_index = header.index("Name")
@@ -90,11 +91,11 @@ def fetch_exchanges_from_google_sheet():
 
             return exchange_dict
         else:
-            print(f"❌ Failed to fetch Google Sheet: {response.status_code}")
+            print(f"❌ ERROR: Failed to fetch Google Sheet - Status Code: {response.status_code}")
             return {}
 
     except Exception as e:
-        print(f"⚠️ Error fetching exchange data from Google Sheet: {e}")
+        print(f"⚠️ ERROR: Failed to fetch exchange data from Google Sheet: {e}")
         return {}
 
 def extract_coin_listing_data(messages):
@@ -139,7 +140,7 @@ def save_alerts_to_json(alerts):
             json.dump(alerts, file, indent=4)
         print("✅ Alerts saved to JSON file.")
     except Exception as e:
-        print(f"⚠️ Error saving alerts: {e}")
+        print(f"⚠️ ERROR: Failed to save alerts: {e}")
 
 @client.event
 async def on_ready():
