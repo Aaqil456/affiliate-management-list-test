@@ -8,10 +8,11 @@ SHEET_ID = "1MSaFExv2AEzf3h1PB9fLEBtpla-E9uP-kDkjqpK2V-g"
 GOOGLE_SHEET_API = os.getenv("GOOGLE_SHEET_API")  # GitHub Secret for Google API Key
 
 # 🔹 **Slack Webhook Configuration**
-SLACK_WEBHOOK_URL = os.getenv("SLACK_WEBHOOK_URL")  # Use GitHub Secrets
+SLACK_WEBHOOK_URL = os.getenv("SLACK_WEBHOOK_URL")  # GitHub Secret for Slack Webhook
 
 # 🔹 **JSON File to Store Alerts**
 ALERTS_JSON_FILE = "coin_listing_alerts.json"
+
 
 def fetch_exchanges_from_google_sheet():
     """ Fetch exchange names and affiliate links from a Google Sheet. """
@@ -50,19 +51,22 @@ def fetch_exchanges_from_google_sheet():
         print(f"⚠️ Error fetching exchange data from Google Sheet: {e}")
         return {}
 
+
 def fetch_slack_alerts():
     """ Fetch latest alerts from Slack Webhook. """
+    if not SLACK_WEBHOOK_URL:
+        print("❌ SLACK_WEBHOOK_URL is missing! Check your environment variables.")
+        return []
+
     try:
         response = requests.get(SLACK_WEBHOOK_URL)
-        
+
         if response.status_code == 200:
             messages = response.json()
 
-            # ✅ Ensure messages are in list format
-            if isinstance(messages, list):
-                return [msg["text"] for msg in messages if "text" in msg]  # Extract message text
-            elif isinstance(messages, dict) and "text" in messages:
-                return [messages["text"]]  # Convert single message into a list
+            if isinstance(messages, list):  
+                return [msg.get("text", "") for msg in messages if "text" in msg]  # Extract message content
+
             else:
                 print(f"⚠️ Unexpected Slack response format: {messages}")
                 return []
@@ -74,6 +78,7 @@ def fetch_slack_alerts():
     except requests.exceptions.RequestException as e:
         print(f"⚠️ Error fetching Slack messages: {e}")
         return []
+
 
 def extract_coin_listing_data(messages):
     """ Parses alert messages to extract coin listing details. """
@@ -90,6 +95,7 @@ def extract_coin_listing_data(messages):
             })
 
     return extracted_data
+
 
 def filter_and_format_alerts(alerts, exchange_dict):
     """ Compare alerts with Google Sheet exchanges & add affiliate links. """
@@ -110,6 +116,7 @@ def filter_and_format_alerts(alerts, exchange_dict):
 
     return formatted_alerts
 
+
 def save_alerts_to_json(alerts):
     """ Save alerts to a JSON file. """
     try:
@@ -118,6 +125,7 @@ def save_alerts_to_json(alerts):
         print("✅ Alerts saved to JSON file.")
     except Exception as e:
         print(f"⚠️ Error saving alerts: {e}")
+
 
 if __name__ == "__main__":
     print("📡 Fetching exchange data from Google Sheet...")
