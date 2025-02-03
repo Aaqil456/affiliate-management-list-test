@@ -1,71 +1,23 @@
-import discord
-import asyncio
+import requests
+import json
 import os
 import re
-import json
-import requests  # ✅ Ensure requests module is imported
-
-# 🔹 **Bot Configuration**
-TOKEN = os.getenv("DISCORD_BOT_TOKEN")  # Get bot token from GitHub Secrets
-CHANNEL_ID = int(os.getenv("DISCORD_CHANNEL_ID"))  # Get Discord Channel ID from GitHub Secrets
 
 # 🔹 **Google Sheets API Configuration**
 SHEET_ID = "1MSaFExv2AEzf3h1PB9fLEBtpla-E9uP-kDkjqpK2V-g"
 GOOGLE_SHEET_API = os.getenv("GOOGLE_SHEET_API")  # GitHub Secret for Google API Key
 
+# 🔹 **Slack Webhook Configuration**
+SLACK_WEBHOOK_URL = os.getenv("SLACK_WEBHOOK_URL")  # Use GitHub Secrets
+
 # 🔹 **JSON File to Store Alerts**
 ALERTS_JSON_FILE = "coin_listing_alerts.json"
-
-# ✅ Initialize Discord Client with INTENTS to READ MESSAGES
-intents = discord.Intents.default()
-intents.messages = True
-intents.guilds = True
-intents.message_content = True  # ✅ REQUIRED to read messages
-client = discord.Client(intents=intents)
-
-async def fetch_messages():
-    """ Fetch latest messages from Discord channel """
-    await client.wait_until_ready()
-    channel = client.get_channel(CHANNEL_ID)
-
-    if channel is None:
-        print("❌ ERROR: Bot CANNOT find the channel. Check DISCORD_CHANNEL_ID!")
-        await client.close()
-        return
-
-    print(f"✅ Bot found channel: {channel.name} ({CHANNEL_ID})")
-    
-    messages = []
-    async for message in channel.history(limit=10):  # Fetch last 10 messages
-        print(f"🔹 [DEBUG] Found Message: {message.content} (by {message.author})")  # Debugging
-        messages.append(message.content)
-
-    if not messages:
-        print("⚠️ ERROR: Bot **can access the channel but NO messages retrieved!** Check bot permissions.")
-
-    # ✅ Extract Coin Listings
-    extracted_alerts = extract_coin_listing_data(messages)
-    
-    # ✅ Fetch exchanges from Google Sheets
-    exchange_dict = fetch_exchanges_from_google_sheet()
-
-    # ✅ Filter & Format Alerts
-    if extracted_alerts and exchange_dict:
-        matched_alerts = filter_and_format_alerts(extracted_alerts, exchange_dict)
-
-        if matched_alerts:
-            save_alerts_to_json(matched_alerts)
-        else:
-            print("⚠️ No alerts matched the exchanges from Google Sheet.")
-
-    print("✅ Messages processed. Shutting down bot.")
-    await client.close()  # Stop the bot after fetching messages
 
 def fetch_exchanges_from_google_sheet():
     """ Fetch exchange names and affiliate links from a Google Sheet. """
     try:
         url = f"https://sheets.googleapis.com/v4/spreadsheets/{SHEET_ID}/values/A1:Z1000?key={GOOGLE_SHEET_API}"
-        response = requests.get(url)  # ✅ Ensure requests is used correctly
+        response = requests.get(url)
 
         if response.status_code == 200:
             data = response.json()
@@ -77,7 +29,7 @@ def fetch_exchanges_from_google_sheet():
 
             header = rows[0]
             if "Name" not in header or "Link" not in header:
-                print("⚠️ ERROR: Google Sheet **missing required columns** 'Name' & 'Link'.")
+                print("⚠️ Required columns 'Name' and 'Link' not found in the sheet.")
                 return {}
 
             name_index = header.index("Name")
@@ -91,12 +43,37 @@ def fetch_exchanges_from_google_sheet():
 
             return exchange_dict
         else:
-            print(f"❌ ERROR: Failed to fetch Google Sheet - Status Code: {response.status_code}")
+            print(f"❌ Failed to fetch Google Sheet: {response.status_code}")
             return {}
 
     except Exception as e:
-        print(f"⚠️ ERROR: Failed to fetch exchange data from Google Sheet: {e}")
+        print(f"⚠️ Error fetching exchange data from Google Sheet: {e}")
         return {}
+
+def fetch_slack_alerts():
+    """ Fetch latest alerts from Slack Webhook. """
+    try:
+        response = requests.get(SLACK_WEBHOOK_URL)
+        
+        if response.status_code == 200:
+            messages = response.json()
+
+            # ✅ Ensure messages are in list format
+            if isinstance(messages, list):
+                return [msg["text"] for msg in messages if "text" in msg]  # Extract message text
+            elif isinstance(messages, dict) and "text" in messages:
+                return [messages["text"]]  # Convert single message into a list
+            else:
+                print(f"⚠️ Unexpected Slack response format: {messages}")
+                return []
+
+        else:
+            print(f"❌ Failed to fetch messages from Slack: {response.status_code}")
+            return []
+
+    except requests.exceptions.RequestException as e:
+        print(f"⚠️ Error fetching Slack messages: {e}")
+        return []
 
 def extract_coin_listing_data(messages):
     """ Parses alert messages to extract coin listing details. """
@@ -140,11 +117,31 @@ def save_alerts_to_json(alerts):
             json.dump(alerts, file, indent=4)
         print("✅ Alerts saved to JSON file.")
     except Exception as e:
-        print(f"⚠️ ERROR: Failed to save alerts: {e}")
+        print(f"⚠️ Error saving alerts: {e}")
 
-@client.event
-async def on_ready():
-    print(f"🚀 Bot logged in as {client.user}")
-    await fetch_messages()
+if __name__ == "__main__":
+    print("📡 Fetching exchange data from Google Sheet...")
+    exchange_dict = fetch_exchanges_from_google_sheet()
 
-client.run(TOKEN)
+    if exchange_dict:
+        print(f"✅ Found {len(exchange_dict)} exchanges from Google Sheet.")
+
+        print("📡 Fetching latest Slack alerts...")
+        messages = fetch_slack_alerts()
+
+        if messages:
+            extracted_alerts = extract_coin_listing_data(messages)
+
+            if extracted_alerts:
+                matched_alerts = filter_and_format_alerts(extracted_alerts, exchange_dict)
+
+                if matched_alerts:
+                    save_alerts_to_json(matched_alerts)
+                else:
+                    print("⚠️ No alerts matched the exchanges from Google Sheet.")
+            else:
+                print("⚠️ No coin listing data extracted.")
+        else:
+            print("⚠️ No new messages from Slack.")
+    else:
+        print("⚠️ No exchanges found in Google Sheet.")
