@@ -2,7 +2,7 @@ name: Update Coin Listing Alerts
 
 on:
   #schedule:
-    #- cron: "*/5 * * * *"  # Runs every 5 minutes
+    #- cron: "*/30 * * * *"  # Runs every 30 minutes
   workflow_dispatch:  # Allows manual execution from GitHub Actions
 
 permissions:
@@ -22,15 +22,20 @@ jobs:
           python-version: "3.9"
 
       - name: 📦 Install Dependencies
-        run: pip install requests
+        run: pip install discord.py requests
 
       - name: 🔑 Verify GitHub Secrets
         env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          DISCORD_CHANNEL_ID: ${{ secrets.DISCORD_CHANNEL_ID }}
           GOOGLE_SHEET_API: ${{ secrets.GOOGLE_SHEET_API }}
         run: |
-          if [ -z "${DISCORD_WEBHOOK_URL}" ]; then
-            echo "❌ DISCORD_WEBHOOK_URL is missing!"
+          if [ -z "${DISCORD_BOT_TOKEN}" ]; then
+            echo "❌ DISCORD_BOT_TOKEN is missing!"
+            exit 1
+          fi
+          if [ -z "${DISCORD_CHANNEL_ID}" ]; then
+            echo "❌ DISCORD_CHANNEL_ID is missing!"
             exit 1
           fi
           if [ -z "${GOOGLE_SHEET_API}" ]; then
@@ -40,7 +45,8 @@ jobs:
 
       - name: 🏗 Run Alert Fetching Script
         env:
-          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          DISCORD_CHANNEL_ID: ${{ secrets.DISCORD_CHANNEL_ID }}
           GOOGLE_SHEET_API: ${{ secrets.GOOGLE_SHEET_API }}
         run: python fetch_alerts.py
 
@@ -53,10 +59,3 @@ jobs:
           git add coin_listing_alerts.json
           git diff --cached --quiet || git commit -m "🔄 Update Coin Listing Alerts"
           git push https://x-access-token:${{ secrets.ACTIONS_PAT }}@github.com/${{ github.repository }}.git main
-
-      - name: 🚀 Trigger GitHub Pages Rebuild
-        env:
-          ACTIONS_PAT: ${{ secrets.ACTIONS_PAT }}
-        run: |
-          curl -X POST -H "Authorization: token ${{ secrets.ACTIONS_PAT }}" \
-          https://api.github.com/repos/${{ github.repository }}/pages/builds
