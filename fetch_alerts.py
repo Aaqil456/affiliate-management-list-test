@@ -16,10 +16,10 @@ GOOGLE_SHEET_API = os.getenv("GOOGLE_SHEET_API")  # GitHub Secret for Google API
 # 🔹 **JSON File to Store Alerts**
 ALERTS_JSON_FILE = "coin_listing_alerts.json"
 
-# ✅ Initialize Discord Client
+# ✅ Enable required intents (Fixes Privileged Intents Error)
 intents = discord.Intents.default()
 intents.messages = True
-intents.message_content = True  # ✅ Required for fetching message content
+intents.message_content = True  # ✅ REQUIRED: Enables reading message content
 client = discord.Client(intents=intents)
 
 async def fetch_messages():
@@ -28,13 +28,13 @@ async def fetch_messages():
     channel = client.get_channel(CHANNEL_ID)
 
     if channel is None:
-        print("❌ Channel not found. Check the CHANNEL_ID.")
+        print("❌ Channel not found. Check the DISCORD_CHANNEL_ID.")
         await client.close()
         return
 
     messages = []
     async for message in channel.history(limit=10):  # Fetch last 10 messages
-        print(f"📥 Received message: {message.content}")  # ✅ Debugging: Print messages
+        print(f"📩 Received Message: {message.content}")  # ✅ Print received messages
         messages.append(message.content)
 
     # ✅ Extract Coin Listings
@@ -141,5 +141,4 @@ async def on_ready():
     print(f"🚀 Bot logged in as {client.user}")
     await fetch_messages()
 
-# ✅ Run the bot
 client.run(TOKEN)
