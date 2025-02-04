@@ -26,29 +26,30 @@
         }
         .alert-card {
             background-color: #1e1e1e;
-            padding: 15px;
+            padding: 12px 15px;
             border-radius: 8px;
-            width: 280px;
+            width: 320px;
             box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 1em;
         }
         .alert-card strong {
-            display: block;
-            font-size: 1.2em;
-            margin-bottom: 10px;
+            font-size: 1.1em;
         }
         .join-btn {
-            display: inline-block;
             background-color: #00e2b1;
             color: #121212;
-            padding: 10px 15px;
+            padding: 8px 12px;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
             transition: background 0.3s ease-in-out;
+            font-size: 0.9em;
         }
         .join-btn:hover {
-            background-color: #00e2b1;
+            background-color: #00c08a;
         }
         /* Custom Scrollbar Styles */
         ::-webkit-scrollbar {
@@ -67,7 +68,7 @@
     </style>
 </head>
 <body>
-   
+
     <ul id="alerts"></ul>
 
     <script>
@@ -79,7 +80,8 @@
                     let li = document.createElement("li");
                     li.classList.add("alert-card");
                     li.innerHTML = `
-                        <strong>$${alert.ticker}</strong> baru tersenarai di <strong>${alert.exchange}</strong> <a href="${alert.affiliate_url}" target="_blank" class="join-btn">Trade</a>
+                        <strong>$${alert.ticker}</strong> tersenarai di <strong>${alert.exchange}</strong>
+                        <a href="${alert.affiliate_url}" target="_blank" class="join-btn">Trade</a>
                     `;
                     list.appendChild(li);
                 });
