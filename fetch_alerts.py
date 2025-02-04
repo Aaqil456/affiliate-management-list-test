@@ -3,14 +3,14 @@ import json
 import os
 import re
 
-# 🔹 **Google Sheets API Configuration**
+# Google Sheets API Configuration
 SHEET_ID = "1MSaFExv2AEzf3h1PB9fLEBtpla-E9uP-kDkjqpK2V-g"
 GOOGLE_SHEET_API = os.getenv("GOOGLE_SHEET_API")  # GitHub Secret for Google API Key
 
-# 🔹 **Slack Webhook Configuration**
+# Slack Webhook Configuration
 SLACK_WEBHOOK_URL = os.getenv("SLACK_WEBHOOK_URL")  # GitHub Secret for Slack Webhook
 
-# 🔹 **JSON File to Store Alerts**
+# JSON File to Store Alerts
 ALERTS_JSON_FILE = "coin_listing_alerts.json"
 
 
@@ -25,12 +25,12 @@ def fetch_exchanges_from_google_sheet():
             rows = data.get("values", [])
 
             if not rows:
-                print("⚠️ No data found in Google Sheet.")
+                print("No data found in Google Sheet.")
                 return {}
 
             header = rows[0]
             if "Name" not in header or "Link" not in header:
-                print("⚠️ Required columns 'Name' and 'Link' not found in the sheet.")
+                print("Required columns 'Name' and 'Link' not found in the sheet.")
                 return {}
 
             name_index = header.index("Name")
@@ -44,39 +44,38 @@ def fetch_exchanges_from_google_sheet():
 
             return exchange_dict
         else:
-            print(f"❌ Failed to fetch Google Sheet: {response.status_code}")
+            print(f"Failed to fetch Google Sheet: {response.status_code}")
             return {}
 
     except Exception as e:
-        print(f"⚠️ Error fetching exchange data from Google Sheet: {e}")
+        print(f"Error fetching exchange data from Google Sheet: {e}")
         return {}
 
 
 def fetch_slack_alerts():
     """ Fetch latest alerts from Slack Webhook. """
     if not SLACK_WEBHOOK_URL:
-        print("❌ SLACK_WEBHOOK_URL is missing! Check your environment variables.")
+        print("SLACK_WEBHOOK_URL is missing! Check your environment variables.")
         return []
 
     try:
-        response = requests.get(SLACK_WEBHOOK_URL)
+        response = requests.post(SLACK_WEBHOOK_URL, json={})  # Fixed: POST instead of GET
 
         if response.status_code == 200:
             messages = response.json()
 
             if isinstance(messages, list):  
                 return [msg.get("text", "") for msg in messages if "text" in msg]  # Extract message content
-
             else:
-                print(f"⚠️ Unexpected Slack response format: {messages}")
+                print(f"Unexpected Slack response format: {messages}")
                 return []
 
         else:
-            print(f"❌ Failed to fetch messages from Slack: {response.status_code}")
+            print(f"Failed to fetch messages from Slack: {response.status_code} - {response.text}")
             return []
 
     except requests.exceptions.RequestException as e:
-        print(f"⚠️ Error fetching Slack messages: {e}")
+        print(f"Error fetching Slack messages: {e}")
         return []
 
 
@@ -122,19 +121,19 @@ def save_alerts_to_json(alerts):
     try:
         with open(ALERTS_JSON_FILE, "w") as file:
             json.dump(alerts, file, indent=4)
-        print("✅ Alerts saved to JSON file.")
+        print("Alerts saved to JSON file.")
     except Exception as e:
-        print(f"⚠️ Error saving alerts: {e}")
+        print(f"Error saving alerts: {e}")
 
 
 if __name__ == "__main__":
-    print("📡 Fetching exchange data from Google Sheet...")
+    print("Fetching exchange data from Google Sheet...")
     exchange_dict = fetch_exchanges_from_google_sheet()
 
     if exchange_dict:
-        print(f"✅ Found {len(exchange_dict)} exchanges from Google Sheet.")
+        print(f"Found {len(exchange_dict)} exchanges from Google Sheet.")
 
-        print("📡 Fetching latest Slack alerts...")
+        print("Fetching latest Slack alerts...")
         messages = fetch_slack_alerts()
 
         if messages:
@@ -146,10 +145,10 @@ if __name__ == "__main__":
                 if matched_alerts:
                     save_alerts_to_json(matched_alerts)
                 else:
-                    print("⚠️ No alerts matched the exchanges from Google Sheet.")
+                    print("No alerts matched the exchanges from Google Sheet.")
             else:
-                print("⚠️ No coin listing data extracted.")
+                print("No coin listing data extracted.")
         else:
-            print("⚠️ No new messages from Slack.")
+            print("No new messages from Slack.")
     else:
-        print("⚠️ No exchanges found in Google Sheet.")
+        print("No exchanges found in Google Sheet.")
