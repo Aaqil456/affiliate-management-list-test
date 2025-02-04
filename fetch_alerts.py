@@ -96,13 +96,17 @@ def extract_coin_listing_data(messages):
     extracted_data = []
 
     for msg in messages:
-        match = re.search(r"(.+?) \((.+?)\) .* listed on (.+?) -", msg)
+        # Clean up Slack's link formatting <URL|Text> to extract the actual text
+        cleaned_msg = re.sub(r"<[^|>]+\|([^>]+)>", r"\1", msg)
+
+        # Extract coin listing data using improved regex
+        match = re.search(r"(.+?) \((.+?)\) .* listed on (.+?) -", cleaned_msg)
         if match:
             extracted_data.append({
-                "coin": match.group(1),
-                "ticker": match.group(2),
-                "exchange": match.group(3),
-                "alert_message": msg
+                "coin": match.group(1).strip(),
+                "ticker": match.group(2).strip(),
+                "exchange": match.group(3).strip(),
+                "alert_message": cleaned_msg  # Store cleaned message for debugging
             })
 
     return extracted_data
@@ -156,6 +160,9 @@ if __name__ == "__main__":
 
                 if matched_alerts:
                     save_alerts_to_json(matched_alerts)
+                    print("\n✅ Matched Alerts:")
+                    for alert in matched_alerts:
+                        print(f"- {alert['coin']} ({alert['ticker']}) on {alert['exchange']} ✅")
                 else:
                     print("No alerts matched the exchanges from Google Sheet.")
             else:
