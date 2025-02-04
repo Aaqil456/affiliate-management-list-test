@@ -1,1 +1,8 @@
-[]
+[
+    {
+        "exchange": "MEXC",
+        "coin": "Elon for AfD",
+        "ticker": "ELON4AFD",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak"
+    }
+]
