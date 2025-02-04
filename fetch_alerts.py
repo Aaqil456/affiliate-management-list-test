@@ -7,7 +7,7 @@ import re
 SHEET_ID = "1MSaFExv2AEzf3h1PB9fLEBtpla-E9uP-kDkjqpK2V-g"
 GOOGLE_SHEET_API = os.getenv("GOOGLE_SHEET_API")  # GitHub Secret for Google API Key
 
-# Slack API Configuration (Replaced Webhook with Bot Token & Channel ID)
+# Slack API Configuration (Using Bot Token & Channel ID)
 SLACK_BOT_TOKEN = os.getenv("SLACK_BOT_TOKEN")  # Slack Bot Token (xoxb-...)
 SLACK_CHANNEL_ID = os.getenv("SLACK_CHANNEL_ID")  # Slack Channel ID
 
@@ -74,7 +74,14 @@ def fetch_slack_alerts():
         data = response.json()
 
         if response.status_code == 200 and data.get("ok"):
-            return [msg.get("text", "") for msg in data.get("messages", []) if "text" in msg]
+            messages = [msg.get("text", "") for msg in data.get("messages", []) if "text" in msg]
+
+            # Print the fetched messages for debugging
+            print("\nFetched Slack Messages:")
+            for idx, msg in enumerate(messages, start=1):
+                print(f"{idx}. {msg}")
+
+            return messages
         else:
             print(f"Error fetching messages: {data.get('error')}")
             return []
