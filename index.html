@@ -10,43 +10,54 @@
             color: #ffffff;
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 10px;
             text-align: center;
-        }
-        h1 {
-            margin-bottom: 20px;
+            font-size: 12px;
         }
         #alerts {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
+            flex-direction: column;
+            gap: 6px;
             list-style: none;
             padding: 0;
+            max-width: 100%;
+            overflow: hidden;
         }
         .alert-card {
             background-color: #1e1e1e;
-            padding: 12px 15px;
-            border-radius: 8px;
-            width: 320px;
-            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+            padding: 6px 10px;
+            border-radius: 5px;
+            width: 220px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            font-size: 0.8em;
+            font-size: 11px;
+            box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+            white-space: nowrap;
+            overflow: hidden;
         }
-        .alert-card strong {
-            font-size: 1.0em;
+        .alert-text {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            flex-grow: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .alert-text strong {
+            font-size: 12px;
+            white-space: nowrap;
         }
         .join-btn {
             background-color: #00e2b1;
             color: #121212;
-            padding: 8px 12px;
+            padding: 4px 6px;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 4px;
             font-weight: bold;
-            transition: background 0.3s ease-in-out;
-            font-size: 0.9em;
+            font-size: 10px;
+            transition: background 0.2s ease-in-out;
+            white-space: nowrap;
         }
         .join-btn:hover {
             background-color: #00c08a;
@@ -80,7 +91,9 @@
                     let li = document.createElement("li");
                     li.classList.add("alert-card");
                     li.innerHTML = `
-                        <strong>$${alert.ticker}</strong> tersenarai di <strong>${alert.exchange}</strong>
+                        <div class="alert-text">
+                            <strong>$${alert.ticker}</strong> di <strong>${alert.exchange}</strong>
+                        </div>
                         <a href="${alert.affiliate_url}" target="_blank" class="join-btn">Trade</a>
                     `;
                     list.appendChild(li);
