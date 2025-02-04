@@ -4,23 +4,5 @@
         "coin": "LAKE",
         "ticker": "LAK3",
         "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "Crypto Delivery",
-        "ticker": "DCOIN",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "Whiteheart Token",
-        "ticker": "WHITE",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "Elon for AfD",
-        "ticker": "ELON4AFD",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak"
     }
 ]
