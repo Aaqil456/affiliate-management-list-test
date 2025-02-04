@@ -1,6 +1,12 @@
 [
     {
         "exchange": "MEXC",
+        "coin": "LAKE",
+        "ticker": "LAK3",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak"
+    },
+    {
+        "exchange": "MEXC",
         "coin": "Crypto Delivery",
         "ticker": "DCOIN",
         "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak"
