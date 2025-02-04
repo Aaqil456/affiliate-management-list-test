@@ -65,8 +65,8 @@
                     let li = document.createElement("li");
                     li.classList.add("alert-card");
                     li.innerHTML = `
-                        <strong>${alert.ticker}</strong>
-                        Kini berada di <strong>${alert.exchange}</strong><br><br>
+                        <strong>$${alert.exchange}</strong> baru tersenarai di <strong>${alert.ticker}</strong>
+                        <br>
                         <a href="${alert.affiliate_url}" target="_blank" class="join-btn">Sertai Sini</a>
                     `;
                     list.appendChild(li);
