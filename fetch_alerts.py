@@ -7,8 +7,9 @@ import re
 SHEET_ID = "1MSaFExv2AEzf3h1PB9fLEBtpla-E9uP-kDkjqpK2V-g"
 GOOGLE_SHEET_API = os.getenv("GOOGLE_SHEET_API")  # GitHub Secret for Google API Key
 
-# Slack Webhook Configuration
-SLACK_WEBHOOK_URL = os.getenv("SLACK_WEBHOOK_URL")  # GitHub Secret for Slack Webhook
+# Slack API Configuration (Replaced Webhook with Bot Token & Channel ID)
+SLACK_BOT_TOKEN = os.getenv("SLACK_BOT_TOKEN")  # Slack Bot Token (xoxb-...)
+SLACK_CHANNEL_ID = os.getenv("SLACK_CHANNEL_ID")  # Slack Channel ID
 
 # JSON File to Store Alerts
 ALERTS_JSON_FILE = "coin_listing_alerts.json"
@@ -53,25 +54,29 @@ def fetch_exchanges_from_google_sheet():
 
 
 def fetch_slack_alerts():
-    """ Fetch latest alerts from Slack Webhook. """
-    if not SLACK_WEBHOOK_URL:
-        print("SLACK_WEBHOOK_URL is missing! Check your environment variables.")
+    """ Fetch latest messages from a Slack channel using Slack API. """
+    if not SLACK_BOT_TOKEN or not SLACK_CHANNEL_ID:
+        print("SLACK_BOT_TOKEN or SLACK_CHANNEL_ID is missing! Check your environment variables.")
         return []
 
+    url = "https://slack.com/api/conversations.history"
+    headers = {
+        "Authorization": f"Bearer {SLACK_BOT_TOKEN}",
+        "Content-Type": "application/json"
+    }
+    params = {
+        "channel": SLACK_CHANNEL_ID,
+        "limit": 10  # Fetch the last 10 messages
+    }
+
     try:
-        response = requests.post(SLACK_WEBHOOK_URL, json={})  # Fixed: POST instead of GET
+        response = requests.get(url, headers=headers, params=params)
+        data = response.json()
 
-        if response.status_code == 200:
-            messages = response.json()
-
-            if isinstance(messages, list):  
-                return [msg.get("text", "") for msg in messages if "text" in msg]  # Extract message content
-            else:
-                print(f"Unexpected Slack response format: {messages}")
-                return []
-
+        if response.status_code == 200 and data.get("ok"):
+            return [msg.get("text", "") for msg in data.get("messages", []) if "text" in msg]
         else:
-            print(f"Failed to fetch messages from Slack: {response.status_code} - {response.text}")
+            print(f"Error fetching messages: {data.get('error')}")
             return []
 
     except requests.exceptions.RequestException as e:
