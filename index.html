@@ -4,6 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coin Listing Alerts</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        #alerts {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            list-style: none;
+            padding: 0;
+        }
+        .alert-card {
+            background-color: #1e1e1e;
+            padding: 15px;
+            border-radius: 8px;
+            width: 280px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+        .alert-card strong {
+            display: block;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .join-btn {
+            display: inline-block;
+            background-color: #ff9800;
+            color: #121212;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s ease-in-out;
+        }
+        .join-btn:hover {
+            background-color: #e68900;
+        }
+    </style>
 </head>
 <body>
     <h1>Latest Coin Listings</h1>
@@ -16,7 +63,12 @@
                 let list = document.getElementById("alerts");
                 data.forEach(alert => {
                     let li = document.createElement("li");
-                    li.innerHTML = `<strong>${alert.coin} (${alert.ticker})</strong> listed on <strong>${alert.exchange}</strong> - <a href="${alert.affiliate_url}" target="_blank">Join</a>`;
+                    li.classList.add("alert-card");
+                    li.innerHTML = `
+                        <strong>${alert.coin} (${alert.ticker})</strong>
+                        Kini berada di <strong>${alert.exchange}</strong><br><br>
+                        <a href="${alert.affiliate_url}" target="_blank" class="join-btn">Sertai Sini</a>
+                    `;
                     list.appendChild(li);
                 });
             })
