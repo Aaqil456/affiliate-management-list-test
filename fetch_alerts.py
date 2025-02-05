@@ -80,7 +80,7 @@ def fetch_slack_alerts():
     }
     params = {
         "channel": SLACK_CHANNEL_ID,
-        "limit": 50  # Fetch the last 10 messages
+        "limit": 10  # Fetch the last 10 messages
     }
 
     try:
