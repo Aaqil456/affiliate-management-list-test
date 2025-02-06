@@ -141,8 +141,11 @@ def filter_and_format_alerts(alerts, exchange_dict, existing_alerts):
 
 
 def save_alerts_to_json(alerts):
-    """ Save alerts to a JSON file. """
+    """ Save alerts to a JSON file, sorted by newest first. """
     try:
+        # Sort alerts by 'date_added' (newest first)
+        alerts.sort(key=lambda x: datetime.strptime(x["date_added"], "%Y-%m-%d"), reverse=True)
+
         with open(ALERTS_JSON_FILE, "w") as file:
             json.dump(alerts, file, indent=4)
         print("Alerts saved to JSON file.")
@@ -171,10 +174,12 @@ if __name__ == "__main__":
                 if matched_alerts:
                     # Combine new and existing alerts
                     final_alerts = existing_alerts + matched_alerts
+
+                    # Sort the final list from newest to oldest
                     save_alerts_to_json(final_alerts)
 
-                    print("\n✅ Updated Alerts:")
-                    for alert in matched_alerts:
+                    print("\n✅ Updated Alerts (Sorted by Newest First):")
+                    for alert in final_alerts:
                         print(f"- {alert['coin']} ({alert['ticker']}) on {alert['exchange']} ✅")
                 else:
                     print("No new alerts matched or all were duplicates.")
