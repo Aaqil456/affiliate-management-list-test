@@ -15,6 +15,13 @@
     },
     {
         "exchange": "MEXC",
+        "coin": "Berachain",
+        "ticker": "BERA",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-02-06"
+    },
+    {
+        "exchange": "MEXC",
         "coin": "LAKE",
         "ticker": "LAK3",
         "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
