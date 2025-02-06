@@ -61,5 +61,12 @@
         "ticker": "VICE",
         "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
         "date_added": "2025-02-05"
+    },
+    {
+        "exchange": "MEXC",
+        "coin": "Domi Online",
+        "ticker": "DOMI",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-02-06"
     }
 ]
