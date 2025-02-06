@@ -1,8 +1,15 @@
 [
-        {
+    {
         "exchange": "MEXC",
         "coin": "Domi Online",
         "ticker": "DOMI",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-02-06"
+    },
+    {
+        "exchange": "MEXC",
+        "coin": "saffron.finance",
+        "ticker": "SFI",
         "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
         "date_added": "2025-02-06"
     },
@@ -69,5 +76,4 @@
         "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
         "date_added": "2025-02-05"
     }
-
 ]
