@@ -1,6 +1,13 @@
 [
     {
         "exchange": "MEXC",
+        "coin": "Teleport System Token",
+        "ticker": "TST",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-02-08"
+    },
+    {
+        "exchange": "MEXC",
         "coin": "Elon Trump Fart",
         "ticker": "ETF500",
         "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
@@ -75,68 +82,5 @@
         "ticker": "BERA",
         "affiliate_url": "https://www.binance.info/activity/referral-entry/CPA/together-v4?hl=en&ref=CPA_00J27B927R",
         "date_added": "2025-02-06"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "LAKE",
-        "ticker": "LAK3",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-05"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "Crypto Delivery",
-        "ticker": "DCOIN",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-05"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "Whiteheart Token",
-        "ticker": "WHITE",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-05"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "Elon for AfD",
-        "ticker": "ELON4AFD",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-05"
-    },
-    {
-        "exchange": "Gate.io",
-        "coin": "BOTIFY",
-        "ticker": "BOTIFY",
-        "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
-        "date_added": "2025-02-05"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "MoonEdge",
-        "ticker": "MOONED",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-05"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "Hawala.Today",
-        "ticker": "HAT",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-05"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "Limit",
-        "ticker": "LMT",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-05"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "VICEWRLD",
-        "ticker": "VICE",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-05"
     }
 ]
