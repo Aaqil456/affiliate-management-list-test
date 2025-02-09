@@ -15,6 +15,13 @@
     },
     {
         "exchange": "MEXC",
+        "coin": "Stool Prisondente",
+        "ticker": "JAILSTOOL",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-02-09"
+    },
+    {
+        "exchange": "MEXC",
         "coin": "Teleport System Token",
         "ticker": "TST",
         "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
