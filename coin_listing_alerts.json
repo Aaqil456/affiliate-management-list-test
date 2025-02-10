@@ -1,6 +1,13 @@
 [
     {
         "exchange": "MEXC",
+        "coin": "CareerCoin",
+        "ticker": "CAR",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-02-10"
+    },
+    {
+        "exchange": "MEXC",
         "coin": "CocktailToken",
         "ticker": "COCK",
         "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
@@ -26,33 +33,5 @@
         "ticker": "TST",
         "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
         "date_added": "2025-02-08"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "Elon Trump Fart",
-        "ticker": "ETF500",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-07"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "Percy",
-        "ticker": "PERCY",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-07"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "Tardi",
-        "ticker": "TARDI",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-07"
-    },
-    {
-        "exchange": "Gate.io",
-        "coin": "Mindsync",
-        "ticker": "MAI",
-        "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
-        "date_added": "2025-02-07"
     }
 ]
