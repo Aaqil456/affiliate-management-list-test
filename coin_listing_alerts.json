@@ -29,6 +29,13 @@
     },
     {
         "exchange": "MEXC",
+        "coin": "Analog",
+        "ticker": "ANLOG",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-02-10"
+    },
+    {
+        "exchange": "MEXC",
         "coin": "CocktailToken",
         "ticker": "COCK",
         "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
