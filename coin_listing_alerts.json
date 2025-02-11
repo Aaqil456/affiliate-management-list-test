@@ -1,6 +1,13 @@
 [
     {
         "exchange": "MEXC",
+        "coin": "Stakecube",
+        "ticker": "SCC",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-02-11"
+    },
+    {
+        "exchange": "MEXC",
         "coin": "CareerCoin",
         "ticker": "CAR",
         "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
@@ -96,12 +103,5 @@
         "ticker": "JAILSTOOL",
         "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
         "date_added": "2025-02-09"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "Teleport System Token",
-        "ticker": "TST",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-08"
     }
 ]
