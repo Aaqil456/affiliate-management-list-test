@@ -15,6 +15,13 @@
     },
     {
         "exchange": "MEXC",
+        "coin": "Sturdy",
+        "ticker": "STRDY",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-02-11"
+    },
+    {
+        "exchange": "MEXC",
         "coin": "CareerCoin",
         "ticker": "CAR",
         "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
