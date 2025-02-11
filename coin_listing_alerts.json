@@ -35,6 +35,34 @@
         "date_added": "2025-02-11"
     },
     {
+        "exchange": "Bitget",
+        "coin": "UniLayer",
+        "ticker": "LAYER",
+        "affiliate_url": "https://partner.bitgetapp.com/bg/F7WAGD",
+        "date_added": "2025-02-11"
+    },
+    {
+        "exchange": "Bybit",
+        "coin": "UniLayer",
+        "ticker": "LAYER",
+        "affiliate_url": "https://partner.bybitglobal.com/b/bicarakrypto",
+        "date_added": "2025-02-11"
+    },
+    {
+        "exchange": "MEXC",
+        "coin": "OSMI",
+        "ticker": "OSMI",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-02-11"
+    },
+    {
+        "exchange": "Binance",
+        "coin": "UniLayer",
+        "ticker": "LAYER",
+        "affiliate_url": "https://www.binance.info/activity/referral-entry/CPA/together-v4?hl=en&ref=CPA_00J27B927R",
+        "date_added": "2025-02-11"
+    },
+    {
         "exchange": "MEXC",
         "coin": "CareerCoin",
         "ticker": "CAR",
