@@ -1,6 +1,20 @@
 [
     {
         "exchange": "MEXC",
+        "coin": "????DIAMOND???? DAO",
+        "ticker": "DIAM",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-02-12"
+    },
+    {
+        "exchange": "MEXC",
+        "coin": "Project Merge",
+        "ticker": "MERGE",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-02-12"
+    },
+    {
+        "exchange": "MEXC",
         "coin": "Stakecube",
         "ticker": "SCC",
         "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
@@ -138,26 +152,5 @@
         "ticker": "DIAM",
         "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
         "date_added": "2025-02-10"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "CocktailToken",
-        "ticker": "COCK",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-09"
-    },
-    {
-        "exchange": "Binance",
-        "coin": "Teleport System Token",
-        "ticker": "TST",
-        "affiliate_url": "https://www.binance.info/activity/referral-entry/CPA/together-v4?hl=en&ref=CPA_00J27B927R",
-        "date_added": "2025-02-09"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "Stool Prisondente",
-        "ticker": "JAILSTOOL",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-09"
     }
 ]
