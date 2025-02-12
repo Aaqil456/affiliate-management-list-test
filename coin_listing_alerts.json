@@ -43,6 +43,13 @@
     },
     {
         "exchange": "MEXC",
+        "coin": "Game7",
+        "ticker": "G7",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-02-12"
+    },
+    {
+        "exchange": "MEXC",
         "coin": "Stakecube",
         "ticker": "SCC",
         "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
