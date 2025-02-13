@@ -42,6 +42,13 @@
         "date_added": "2025-02-13"
     },
     {
+        "exchange": "Bybit",
+        "coin": "MantraDao",
+        "ticker": "OM",
+        "affiliate_url": "https://partner.bybitglobal.com/b/bicarakrypto",
+        "date_added": "2025-02-13"
+    },
+    {
         "exchange": "MEXC",
         "coin": "????DIAMOND???? DAO",
         "ticker": "DIAM",
