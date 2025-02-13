@@ -56,6 +56,20 @@
         "date_added": "2025-02-13"
     },
     {
+        "exchange": "Bitget",
+        "coin": "ShellCoin",
+        "ticker": "SHELL",
+        "affiliate_url": "https://partner.bitgetapp.com/bg/F7WAGD",
+        "date_added": "2025-02-13"
+    },
+    {
+        "exchange": "Gate.io",
+        "coin": "ShellCoin",
+        "ticker": "SHELL",
+        "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
+        "date_added": "2025-02-13"
+    },
+    {
         "exchange": "MEXC",
         "coin": "????DIAMOND???? DAO",
         "ticker": "DIAM",
