@@ -50,6 +50,13 @@
     },
     {
         "exchange": "MEXC",
+        "coin": "ShellCoin",
+        "ticker": "SHELL",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-02-13"
+    },
+    {
+        "exchange": "MEXC",
         "coin": "????DIAMOND???? DAO",
         "ticker": "DIAM",
         "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
