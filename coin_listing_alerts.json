@@ -1,5 +1,26 @@
 [
     {
+        "exchange": "Bitget",
+        "coin": "Sohei",
+        "ticker": "HEI",
+        "affiliate_url": "https://partner.bitgetapp.com/bg/F7WAGD",
+        "date_added": "2025-02-13"
+    },
+    {
+        "exchange": "MEXC",
+        "coin": "Story",
+        "ticker": "IP",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-02-13"
+    },
+    {
+        "exchange": "Binance",
+        "coin": "Sohei",
+        "ticker": "HEI",
+        "affiliate_url": "https://www.binance.info/activity/referral-entry/CPA/together-v4?hl=en&ref=CPA_00J27B927R",
+        "date_added": "2025-02-13"
+    },
+    {
         "exchange": "MEXC",
         "coin": "????DIAMOND???? DAO",
         "ticker": "DIAM",
@@ -131,82 +152,5 @@
         "ticker": "LAYER",
         "affiliate_url": "https://www.binance.info/activity/referral-entry/CPA/together-v4?hl=en&ref=CPA_00J27B927R",
         "date_added": "2025-02-11"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "CareerCoin",
-        "ticker": "CAR",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-10"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "Chip",
-        "ticker": "CHIP",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-10"
-    },
-    {
-        "exchange": "Bitget",
-        "coin": "Stool Prisondente",
-        "ticker": "JAILSTOOL",
-        "affiliate_url": "https://partner.bitgetapp.com/bg/F7WAGD",
-        "date_added": "2025-02-10"
-    },
-    {
-        "exchange": "Gate.io",
-        "coin": "Stool Prisondente",
-        "ticker": "JAILSTOOL",
-        "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
-        "date_added": "2025-02-10"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "Analog",
-        "ticker": "ANLOG",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-10"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "Tajir Media",
-        "ticker": "TJRM",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-10"
-    },
-    {
-        "exchange": "Gate.io",
-        "coin": "Analog",
-        "ticker": "ANLOG",
-        "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
-        "date_added": "2025-02-10"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "B3 Coin",
-        "ticker": "B3",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-10"
-    },
-    {
-        "exchange": "Bybit",
-        "coin": "B3 Coin",
-        "ticker": "B3",
-        "affiliate_url": "https://partner.bybitglobal.com/b/bicarakrypto",
-        "date_added": "2025-02-10"
-    },
-    {
-        "exchange": "Gate.io",
-        "coin": "B3 Coin",
-        "ticker": "B3",
-        "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
-        "date_added": "2025-02-10"
-    },
-    {
-        "exchange": "Gate.io",
-        "coin": "????DIAMOND???? DAO",
-        "ticker": "DIAM",
-        "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
-        "date_added": "2025-02-10"
     }
 ]
