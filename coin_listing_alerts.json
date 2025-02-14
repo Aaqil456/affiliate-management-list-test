@@ -21,6 +21,20 @@
         "date_added": "2025-02-14"
     },
     {
+        "exchange": "MEXC",
+        "coin": "SIGMAcoin",
+        "ticker": "SIGMA",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-02-14"
+    },
+    {
+        "exchange": "MEXC",
+        "coin": "RETARDIO",
+        "ticker": "RETARDIO",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-02-14"
+    },
+    {
         "exchange": "Bitget",
         "coin": "Sohei",
         "ticker": "HEI",
