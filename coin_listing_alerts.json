@@ -35,6 +35,13 @@
         "date_added": "2025-02-14"
     },
     {
+        "exchange": "MEXC",
+        "coin": "Dinero",
+        "ticker": "DIN",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-02-14"
+    },
+    {
         "exchange": "Bitget",
         "coin": "Sohei",
         "ticker": "HEI",
