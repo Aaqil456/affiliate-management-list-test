@@ -7,6 +7,13 @@
         "date_added": "2025-02-15"
     },
     {
+        "exchange": "MEXC",
+        "coin": "Aigo Token",
+        "ticker": "AIGO",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-02-15"
+    },
+    {
         "exchange": "Gate.io",
         "coin": "Sohei",
         "ticker": "HEI",
