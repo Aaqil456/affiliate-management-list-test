@@ -1,5 +1,12 @@
 [
     {
+        "exchange": "MEXC",
+        "coin": "Facebook Libra",
+        "ticker": "LIBRA",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-02-15"
+    },
+    {
         "exchange": "Gate.io",
         "coin": "Sohei",
         "ticker": "HEI",
@@ -117,75 +124,5 @@
         "ticker": "SHELL",
         "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
         "date_added": "2025-02-13"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "????DIAMOND???? DAO",
-        "ticker": "DIAM",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-12"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "Project Merge",
-        "ticker": "MERGE",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-12"
-    },
-    {
-        "exchange": "Bybit",
-        "coin": "????DIAMOND???? DAO",
-        "ticker": "DIAM",
-        "affiliate_url": "https://partner.bybitglobal.com/b/bicarakrypto",
-        "date_added": "2025-02-12"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "ScotCoin",
-        "ticker": "SCOT",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-12"
-    },
-    {
-        "exchange": "Gate.io",
-        "coin": "AvailCom Token",
-        "ticker": "AVL",
-        "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
-        "date_added": "2025-02-12"
-    },
-    {
-        "exchange": "Bybit",
-        "coin": "AvailCom Token",
-        "ticker": "AVL",
-        "affiliate_url": "https://partner.bybitglobal.com/b/bicarakrypto",
-        "date_added": "2025-02-12"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "Game7",
-        "ticker": "G7",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-12"
-    },
-    {
-        "exchange": "Gate.io",
-        "coin": "Game7",
-        "ticker": "G7",
-        "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
-        "date_added": "2025-02-12"
-    },
-    {
-        "exchange": "Bybit",
-        "coin": "Game7",
-        "ticker": "G7",
-        "affiliate_url": "https://partner.bybitglobal.com/b/bicarakrypto",
-        "date_added": "2025-02-12"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "Syncvault",
-        "ticker": "SVTS",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-12"
     }
 ]
