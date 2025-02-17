@@ -29,6 +29,13 @@
     },
     {
         "exchange": "MEXC",
+        "coin": "Clustr Labs",
+        "ticker": "CLUSTR",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-02-17"
+    },
+    {
+        "exchange": "MEXC",
         "coin": "Facebook Libra",
         "ticker": "LIBRA",
         "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
