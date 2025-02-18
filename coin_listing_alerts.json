@@ -8,6 +8,13 @@
     },
     {
         "exchange": "MEXC",
+        "coin": "Voltroon",
+        "ticker": "VTN",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-02-18"
+    },
+    {
+        "exchange": "MEXC",
         "coin": "Peptoken",
         "ticker": "PEP",
         "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
