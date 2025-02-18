@@ -1,6 +1,13 @@
 [
     {
         "exchange": "MEXC",
+        "coin": "Arma The Battle Ground",
+        "ticker": "AB",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-02-18"
+    },
+    {
+        "exchange": "MEXC",
         "coin": "Peptoken",
         "ticker": "PEP",
         "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
@@ -33,19 +40,5 @@
         "ticker": "CLUSTR",
         "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
         "date_added": "2025-02-17"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "Facebook Libra",
-        "ticker": "LIBRA",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-15"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "Aigo Token",
-        "ticker": "AIGO",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-15"
     }
 ]
