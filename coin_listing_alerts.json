@@ -8,6 +8,13 @@
     },
     {
         "exchange": "MEXC",
+        "coin": "ChainGamingX",
+        "ticker": "CGX",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-02-19"
+    },
+    {
+        "exchange": "MEXC",
         "coin": "Arma The Battle Ground",
         "ticker": "AB",
         "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
