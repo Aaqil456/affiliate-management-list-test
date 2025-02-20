@@ -1,6 +1,13 @@
 [
     {
         "exchange": "MEXC",
+        "coin": "Hide the Pain Harold",
+        "ticker": "PAIN",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-02-20"
+    },
+    {
+        "exchange": "MEXC",
         "coin": "MantraDao",
         "ticker": "OM",
         "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
@@ -61,40 +68,5 @@
         "ticker": "VTN",
         "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
         "date_added": "2025-02-18"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "Peptoken",
-        "ticker": "PEP",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-17"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "TAPSPAY",
-        "ticker": "TAPS",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-17"
-    },
-    {
-        "exchange": "Bitget",
-        "coin": "TAPSPAY",
-        "ticker": "TAPS",
-        "affiliate_url": "https://partner.bitgetapp.com/bg/F7WAGD",
-        "date_added": "2025-02-17"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "Bitxoxo",
-        "ticker": "XOXO",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-17"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "Clustr Labs",
-        "ticker": "CLUSTR",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-17"
     }
 ]
