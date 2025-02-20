@@ -15,6 +15,20 @@
     },
     {
         "exchange": "MEXC",
+        "coin": "FLORK",
+        "ticker": "FLORK",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-02-20"
+    },
+    {
+        "exchange": "Gate.io",
+        "coin": "QUAI",
+        "ticker": "QUAI",
+        "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
+        "date_added": "2025-02-20"
+    },
+    {
+        "exchange": "MEXC",
         "coin": "MantraDao",
         "ticker": "OM",
         "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
