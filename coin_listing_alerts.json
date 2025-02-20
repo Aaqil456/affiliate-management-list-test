@@ -63,6 +63,34 @@
         "date_added": "2025-02-20"
     },
     {
+        "exchange": "Gate.io",
+        "coin": "Kaito Inu",
+        "ticker": "KAITO",
+        "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
+        "date_added": "2025-02-20"
+    },
+    {
+        "exchange": "Bitget",
+        "coin": "Kaito Inu",
+        "ticker": "KAITO",
+        "affiliate_url": "https://partner.bitgetapp.com/bg/F7WAGD",
+        "date_added": "2025-02-20"
+    },
+    {
+        "exchange": "Binance",
+        "coin": "Kaito Inu",
+        "ticker": "KAITO",
+        "affiliate_url": "https://www.binance.info/activity/referral-entry/CPA/together-v4?hl=en&ref=CPA_00J27B927R",
+        "date_added": "2025-02-20"
+    },
+    {
+        "exchange": "MEXC",
+        "coin": "Shadow Link",
+        "ticker": "SHADOW",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-02-20"
+    },
+    {
         "exchange": "MEXC",
         "coin": "MantraDao",
         "ticker": "OM",
