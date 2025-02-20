@@ -42,6 +42,20 @@
         "date_added": "2025-02-20"
     },
     {
+        "exchange": "Gate.io",
+        "coin": "Hide the Pain Harold",
+        "ticker": "PAIN",
+        "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
+        "date_added": "2025-02-20"
+    },
+    {
+        "exchange": "Bitget",
+        "coin": "PCHAIN",
+        "ticker": "PI",
+        "affiliate_url": "https://partner.bitgetapp.com/bg/F7WAGD",
+        "date_added": "2025-02-20"
+    },
+    {
         "exchange": "MEXC",
         "coin": "MantraDao",
         "ticker": "OM",
