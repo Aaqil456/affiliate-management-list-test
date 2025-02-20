@@ -8,6 +8,13 @@
     },
     {
         "exchange": "MEXC",
+        "coin": "QUAI",
+        "ticker": "QUAI",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-02-20"
+    },
+    {
+        "exchange": "MEXC",
         "coin": "MantraDao",
         "ticker": "OM",
         "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
