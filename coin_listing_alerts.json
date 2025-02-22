@@ -1,5 +1,12 @@
 [
     {
+        "exchange": "Bitget",
+        "coin": "Bitget SOL Staking",
+        "ticker": "BGSOL",
+        "affiliate_url": "https://partner.bitgetapp.com/bg/F7WAGD",
+        "date_added": "2025-02-22"
+    },
+    {
         "exchange": "MEXC",
         "coin": "Rivalz Network",
         "ticker": "RIZ",
@@ -103,54 +110,5 @@
         "ticker": "SHADOW",
         "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
         "date_added": "2025-02-20"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "MantraDao",
-        "ticker": "OM",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-19"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "ChainGamingX",
-        "ticker": "CGX",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-19"
-    },
-    {
-        "exchange": "Gate.io",
-        "coin": "ChainGamingX",
-        "ticker": "CGX",
-        "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
-        "date_added": "2025-02-19"
-    },
-    {
-        "exchange": "Gate.io",
-        "coin": "3X Short TRUMP Token",
-        "ticker": "TRUMP3S",
-        "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
-        "date_added": "2025-02-19"
-    },
-    {
-        "exchange": "Gate.io",
-        "coin": "3X Long TRUMP Token",
-        "ticker": "TRUMP3L",
-        "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
-        "date_added": "2025-02-19"
-    },
-    {
-        "exchange": "Gate.io",
-        "coin": "3X Short ONDO Token",
-        "ticker": "ONDO3S",
-        "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
-        "date_added": "2025-02-19"
-    },
-    {
-        "exchange": "Gate.io",
-        "coin": "3X Long ONDO Token",
-        "ticker": "ONDO3L",
-        "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
-        "date_added": "2025-02-19"
     }
 ]
