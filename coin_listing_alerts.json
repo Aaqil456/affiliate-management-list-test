@@ -1,5 +1,12 @@
 [
     {
+        "exchange": "MEXC",
+        "coin": "MEDX",
+        "ticker": "MEDX",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-02-23"
+    },
+    {
         "exchange": "Bitget",
         "coin": "Bitget SOL Staking",
         "ticker": "BGSOL",
@@ -19,96 +26,5 @@
         "ticker": "RIZ",
         "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
         "date_added": "2025-02-21"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "Hide the Pain Harold",
-        "ticker": "PAIN",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-20"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "QUAI",
-        "ticker": "QUAI",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-20"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "FLORK",
-        "ticker": "FLORK",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-20"
-    },
-    {
-        "exchange": "Gate.io",
-        "coin": "QUAI",
-        "ticker": "QUAI",
-        "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
-        "date_added": "2025-02-20"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "Python Token",
-        "ticker": "PYTHON",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-20"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "PCHAIN",
-        "ticker": "PI",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-20"
-    },
-    {
-        "exchange": "Gate.io",
-        "coin": "Hide the Pain Harold",
-        "ticker": "PAIN",
-        "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
-        "date_added": "2025-02-20"
-    },
-    {
-        "exchange": "Bitget",
-        "coin": "PCHAIN",
-        "ticker": "PI",
-        "affiliate_url": "https://partner.bitgetapp.com/bg/F7WAGD",
-        "date_added": "2025-02-20"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "Kaito Inu",
-        "ticker": "KAITO",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-20"
-    },
-    {
-        "exchange": "Gate.io",
-        "coin": "Kaito Inu",
-        "ticker": "KAITO",
-        "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
-        "date_added": "2025-02-20"
-    },
-    {
-        "exchange": "Bitget",
-        "coin": "Kaito Inu",
-        "ticker": "KAITO",
-        "affiliate_url": "https://partner.bitgetapp.com/bg/F7WAGD",
-        "date_added": "2025-02-20"
-    },
-    {
-        "exchange": "Binance",
-        "coin": "Kaito Inu",
-        "ticker": "KAITO",
-        "affiliate_url": "https://www.binance.info/activity/referral-entry/CPA/together-v4?hl=en&ref=CPA_00J27B927R",
-        "date_added": "2025-02-20"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "Shadow Link",
-        "ticker": "SHADOW",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-20"
     }
 ]
