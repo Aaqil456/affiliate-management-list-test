@@ -1,5 +1,19 @@
 [
     {
+        "exchange": "Gate.io",
+        "coin": "Rivalz Network",
+        "ticker": "RIZ",
+        "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
+        "date_added": "2025-02-24"
+    },
+    {
+        "exchange": "MEXC",
+        "coin": "Rivalz Network",
+        "ticker": "RIZ",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-02-24"
+    },
+    {
         "exchange": "MEXC",
         "coin": "MEDX",
         "ticker": "MEDX",
@@ -12,19 +26,5 @@
         "ticker": "BGSOL",
         "affiliate_url": "https://partner.bitgetapp.com/bg/F7WAGD",
         "date_added": "2025-02-22"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "Rivalz Network",
-        "ticker": "RIZ",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-21"
-    },
-    {
-        "exchange": "Gate.io",
-        "coin": "Rivalz Network",
-        "ticker": "RIZ",
-        "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
-        "date_added": "2025-02-21"
     }
 ]
