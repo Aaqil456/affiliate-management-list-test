@@ -15,6 +15,13 @@
     },
     {
         "exchange": "MEXC",
+        "coin": "Dohrnii",
+        "ticker": "DHN",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-02-24"
+    },
+    {
+        "exchange": "MEXC",
         "coin": "MEDX",
         "ticker": "MEDX",
         "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
