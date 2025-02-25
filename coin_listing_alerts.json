@@ -7,6 +7,13 @@
         "date_added": "2025-02-25"
     },
     {
+        "exchange": "MEXC",
+        "coin": "EthereumPay",
+        "ticker": "EPAY",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-02-25"
+    },
+    {
         "exchange": "Gate.io",
         "coin": "Rivalz Network",
         "ticker": "RIZ",
