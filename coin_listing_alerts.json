@@ -29,6 +29,13 @@
     },
     {
         "exchange": "Gate.io",
+        "coin": "Eliza Finance",
+        "ticker": "DEFAI",
+        "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
+        "date_added": "2025-02-27"
+    },
+    {
+        "exchange": "Gate.io",
         "coin": "Life DAO",
         "ticker": "LF",
         "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
