@@ -1,5 +1,12 @@
 [
     {
+        "exchange": "MEXC",
+        "coin": "Buzero Coin",
+        "ticker": "BZR",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-02-27"
+    },
+    {
         "exchange": "Gate.io",
         "coin": "Life DAO",
         "ticker": "LF",
@@ -33,33 +40,5 @@
         "ticker": "ZOO",
         "affiliate_url": "https://partner.bitgetapp.com/bg/F7WAGD",
         "date_added": "2025-02-25"
-    },
-    {
-        "exchange": "Gate.io",
-        "coin": "Rivalz Network",
-        "ticker": "RIZ",
-        "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
-        "date_added": "2025-02-24"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "Rivalz Network",
-        "ticker": "RIZ",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-24"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "Dohrnii",
-        "ticker": "DHN",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-24"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "MEDX",
-        "ticker": "MEDX",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-23"
     }
 ]
