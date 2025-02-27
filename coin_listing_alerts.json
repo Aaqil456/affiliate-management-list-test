@@ -7,6 +7,13 @@
         "date_added": "2025-02-27"
     },
     {
+        "exchange": "MEXC",
+        "coin": "USDe",
+        "ticker": "USDE",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-02-27"
+    },
+    {
         "exchange": "Gate.io",
         "coin": "Life DAO",
         "ticker": "LF",
