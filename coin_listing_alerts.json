@@ -8,6 +8,20 @@
     },
     {
         "exchange": "MEXC",
+        "coin": "Trace Token",
+        "ticker": "TRACE",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-02-28"
+    },
+    {
+        "exchange": "Bitget",
+        "coin": "Memhash",
+        "ticker": "MEMHASH",
+        "affiliate_url": "https://partner.bitgetapp.com/bg/F7WAGD",
+        "date_added": "2025-02-28"
+    },
+    {
+        "exchange": "MEXC",
         "coin": "Buzero Coin",
         "ticker": "BZR",
         "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
