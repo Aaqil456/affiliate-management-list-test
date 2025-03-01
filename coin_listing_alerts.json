@@ -1,5 +1,12 @@
 [
     {
+        "exchange": "Gate.io",
+        "coin": "BitDegree",
+        "ticker": "BDG",
+        "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
+        "date_added": "2025-03-01"
+    },
+    {
         "exchange": "MEXC",
         "coin": "Memhash",
         "ticker": "MEMHASH",
