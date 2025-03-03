@@ -1,72 +1,16 @@
 [
     {
+        "exchange": "Binance",
+        "coin": "RedCoin",
+        "ticker": "RED",
+        "affiliate_url": "https://www.binance.info/activity/referral-entry/CPA/together-v4?hl=en&ref=CPA_00J27B927R",
+        "date_added": "2025-03-03"
+    },
+    {
         "exchange": "Gate.io",
         "coin": "BitDegree",
         "ticker": "BDG",
         "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
         "date_added": "2025-03-01"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "Memhash",
-        "ticker": "MEMHASH",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-28"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "Trace Token",
-        "ticker": "TRACE",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-28"
-    },
-    {
-        "exchange": "Bitget",
-        "coin": "Memhash",
-        "ticker": "MEMHASH",
-        "affiliate_url": "https://partner.bitgetapp.com/bg/F7WAGD",
-        "date_added": "2025-02-28"
-    },
-    {
-        "exchange": "Binance",
-        "coin": "RedCoin",
-        "ticker": "RED",
-        "affiliate_url": "https://www.binance.info/activity/referral-entry/CPA/together-v4?hl=en&ref=CPA_00J27B927R",
-        "date_added": "2025-02-28"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "Buzero Coin",
-        "ticker": "BZR",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-27"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "USDe",
-        "ticker": "USDE",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-02-27"
-    },
-    {
-        "exchange": "Bitget",
-        "coin": "PlayDapp",
-        "ticker": "PDA",
-        "affiliate_url": "https://partner.bitgetapp.com/bg/F7WAGD",
-        "date_added": "2025-02-27"
-    },
-    {
-        "exchange": "Binance",
-        "coin": "MyShell",
-        "ticker": "SHELL",
-        "affiliate_url": "https://www.binance.info/activity/referral-entry/CPA/together-v4?hl=en&ref=CPA_00J27B927R",
-        "date_added": "2025-02-27"
-    },
-    {
-        "exchange": "Gate.io",
-        "coin": "Eliza Finance",
-        "ticker": "DEFAI",
-        "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
-        "date_added": "2025-02-27"
     }
 ]
