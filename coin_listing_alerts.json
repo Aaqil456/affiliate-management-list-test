@@ -8,6 +8,13 @@
     },
     {
         "exchange": "Gate.io",
+        "coin": "Zenad",
+        "ticker": "ZND",
+        "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
+        "date_added": "2025-03-03"
+    },
+    {
+        "exchange": "Gate.io",
         "coin": "BitDegree",
         "ticker": "BDG",
         "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
