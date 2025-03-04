@@ -15,6 +15,13 @@
     },
     {
         "exchange": "Binance",
+        "coin": "Triffic",
+        "ticker": "GPS",
+        "affiliate_url": "https://www.binance.info/activity/referral-entry/CPA/together-v4?hl=en&ref=CPA_00J27B927R",
+        "date_added": "2025-03-04"
+    },
+    {
+        "exchange": "Binance",
         "coin": "RedCoin",
         "ticker": "RED",
         "affiliate_url": "https://www.binance.info/activity/referral-entry/CPA/together-v4?hl=en&ref=CPA_00J27B927R",
