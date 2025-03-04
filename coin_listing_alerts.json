@@ -1,5 +1,12 @@
 [
     {
+        "exchange": "Bitget",
+        "coin": "Elixir deUSD",
+        "ticker": "DEUSD",
+        "affiliate_url": "https://partner.bitgetapp.com/bg/F7WAGD",
+        "date_added": "2025-03-04"
+    },
+    {
         "exchange": "Binance",
         "coin": "RedCoin",
         "ticker": "RED",
@@ -33,12 +40,5 @@
         "ticker": "IP3S",
         "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
         "date_added": "2025-03-03"
-    },
-    {
-        "exchange": "Gate.io",
-        "coin": "BitDegree",
-        "ticker": "BDG",
-        "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
-        "date_added": "2025-03-01"
     }
 ]
