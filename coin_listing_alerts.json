@@ -1,5 +1,12 @@
 [
     {
+        "exchange": "MEXC",
+        "coin": "ChainCoin",
+        "ticker": "CHC",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-03-05"
+    },
+    {
         "exchange": "Bitget",
         "coin": "Elixir deUSD",
         "ticker": "DEUSD",
