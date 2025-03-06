@@ -1,6 +1,13 @@
 [
     {
         "exchange": "MEXC",
+        "coin": "siren",
+        "ticker": "SIREN",
+        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
+        "date_added": "2025-03-06"
+    },
+    {
+        "exchange": "MEXC",
         "coin": "ChainCoin",
         "ticker": "CHC",
         "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
@@ -47,40 +54,5 @@
         "ticker": "GPS",
         "affiliate_url": "https://www.binance.info/activity/referral-entry/CPA/together-v4?hl=en&ref=CPA_00J27B927R",
         "date_added": "2025-03-04"
-    },
-    {
-        "exchange": "Binance",
-        "coin": "RedCoin",
-        "ticker": "RED",
-        "affiliate_url": "https://www.binance.info/activity/referral-entry/CPA/together-v4?hl=en&ref=CPA_00J27B927R",
-        "date_added": "2025-03-03"
-    },
-    {
-        "exchange": "Gate.io",
-        "coin": "Zenad",
-        "ticker": "ZND",
-        "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
-        "date_added": "2025-03-03"
-    },
-    {
-        "exchange": "Bitget",
-        "coin": "Arma The Battle Ground",
-        "ticker": "AB",
-        "affiliate_url": "https://partner.bitgetapp.com/bg/F7WAGD",
-        "date_added": "2025-03-03"
-    },
-    {
-        "exchange": "Gate.io",
-        "coin": "3X Long IP Token",
-        "ticker": "IP3L",
-        "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
-        "date_added": "2025-03-03"
-    },
-    {
-        "exchange": "Gate.io",
-        "coin": "3X Short IP Token",
-        "ticker": "IP3S",
-        "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
-        "date_added": "2025-03-03"
     }
 ]
