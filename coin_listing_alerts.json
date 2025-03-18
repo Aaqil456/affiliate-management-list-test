@@ -1,58 +1,9 @@
 [
     {
         "exchange": "MEXC",
-        "coin": "siren",
-        "ticker": "SIREN",
+        "coin": "Tutellus",
+        "ticker": "TUT",
         "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-03-06"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "ChainCoin",
-        "ticker": "CHC",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-03-05"
-    },
-    {
-        "exchange": "Gate.io",
-        "coin": "Wrapped REACT",
-        "ticker": "REACT",
-        "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
-        "date_added": "2025-03-05"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "PEPE CAT",
-        "ticker": "PEPECAT",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-03-05"
-    },
-    {
-        "exchange": "Gate.io",
-        "coin": "Aurus Silver",
-        "ticker": "AWS",
-        "affiliate_url": "https://www.gate.io/signup/BgASAV5W?ref_type=103",
-        "date_added": "2025-03-05"
-    },
-    {
-        "exchange": "Bitget",
-        "coin": "Elixir deUSD",
-        "ticker": "DEUSD",
-        "affiliate_url": "https://partner.bitgetapp.com/bg/F7WAGD",
-        "date_added": "2025-03-04"
-    },
-    {
-        "exchange": "MEXC",
-        "coin": "Aspire",
-        "ticker": "GASP",
-        "affiliate_url": "https://www.mexc.co/register?inviteCode=mexc-bicarak",
-        "date_added": "2025-03-04"
-    },
-    {
-        "exchange": "Binance",
-        "coin": "Triffic",
-        "ticker": "GPS",
-        "affiliate_url": "https://www.binance.info/activity/referral-entry/CPA/together-v4?hl=en&ref=CPA_00J27B927R",
-        "date_added": "2025-03-04"
+        "date_added": "2025-03-18"
     }
 ]
