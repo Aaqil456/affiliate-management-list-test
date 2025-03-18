@@ -12,6 +12,10 @@ GOOGLE_SHEET_API = os.getenv("GOOGLE_SHEET_API")
 SLACK_BOT_TOKEN = os.getenv("SLACK_BOT_TOKEN")
 SLACK_CHANNEL_ID = os.getenv("SLACK_CHANNEL_ID")
 
+# Telegram API Configuration
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
+
 # JSON File to Store Alerts
 ALERTS_JSON_FILE = "coin_listing_alerts.json"
 
@@ -22,8 +26,7 @@ def fetch_existing_alerts():
         if os.path.exists(ALERTS_JSON_FILE):
             with open(ALERTS_JSON_FILE, "r") as file:
                 alerts = json.load(file)
-                
-            # Filter out old alerts (older than 3 days)
+
             three_days_ago = datetime.utcnow() - timedelta(days=3)
             fresh_alerts = [alert for alert in alerts if datetime.strptime(alert["date_added"], "%Y-%m-%d") >= three_days_ago]
 
@@ -80,7 +83,7 @@ def fetch_slack_alerts():
     }
     params = {
         "channel": SLACK_CHANNEL_ID,
-        "limit": 10  # Fetch the last 10 messages
+        "limit": 10
     }
 
     try:
@@ -112,7 +115,7 @@ def extract_coin_listing_data(messages):
                 "coin": match.group(1).strip(),
                 "ticker": match.group(2).strip(),
                 "exchange": match.group(3).strip(),
-                "date_added": datetime.utcnow().strftime("%Y-%m-%d")  # Add timestamp
+                "date_added": datetime.utcnow().strftime("%Y-%m-%d")
             })
 
     return extracted_data
@@ -143,7 +146,6 @@ def filter_and_format_alerts(alerts, exchange_dict, existing_alerts):
 def save_alerts_to_json(alerts):
     """ Save alerts to a JSON file, sorted by newest first. """
     try:
-        # Sort alerts by 'date_added' (newest first)
         alerts.sort(key=lambda x: datetime.strptime(x["date_added"], "%Y-%m-%d"), reverse=True)
 
         with open(ALERTS_JSON_FILE, "w") as file:
@@ -151,6 +153,29 @@ def save_alerts_to_json(alerts):
         print("Alerts saved to JSON file.")
     except Exception as e:
         print(f"Error saving alerts: {e}")
+
+
+def send_telegram_message(message):
+    """ Send alert to Telegram channel """
+    if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
+        print("TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID not set.")
+        return
+
+    url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+    payload = {
+        "chat_id": TELEGRAM_CHAT_ID,
+        "text": message,
+        "parse_mode": "Markdown"
+    }
+
+    try:
+        response = requests.post(url, json=payload)
+        if response.status_code == 200:
+            print("✅ Telegram message sent.")
+        else:
+            print(f"Failed to send Telegram message: {response.text}")
+    except Exception as e:
+        print(f"Telegram send error: {e}")
 
 
 if __name__ == "__main__":
@@ -172,14 +197,17 @@ if __name__ == "__main__":
                 matched_alerts = filter_and_format_alerts(extracted_alerts, exchange_dict, existing_alerts)
 
                 if matched_alerts:
-                    # Combine new and existing alerts
-                    final_alerts = existing_alerts + matched_alerts
+                    # Send alerts to Telegram
+                    for alert in matched_alerts:
+                        telegram_text = f"🚀 *{alert['coin']} ({alert['ticker']})* telah tersenarai *{alert['exchange']}*!\n👉 [Beli Sini]({alert['affiliate_url']})"
+                        send_telegram_message(telegram_text)
 
-                    # Sort the final list from newest to oldest
+                    # Combine new and existing alerts and save
+                    final_alerts = existing_alerts + matched_alerts
                     save_alerts_to_json(final_alerts)
 
                     print("\n✅ Updated Alerts (Sorted by Newest First):")
-                    for alert in final_alerts:
+                    for alert in matched_alerts:
                         print(f"- {alert['coin']} ({alert['ticker']}) on {alert['exchange']} ✅")
                 else:
                     print("No new alerts matched or all were duplicates.")
